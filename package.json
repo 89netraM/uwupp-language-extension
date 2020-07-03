@@ -1,6 +1,7 @@
 {
 	"name": "uwupp-language-extension",
 	"displayName": "UwU++ Syntax Highlighting",
+	"publisher": "89netraM",
 	"description": "Syntax support for the esoteric language UwU++",
 	"author": "Mårten Åsberg",
 	"version": "1.0.0",
