@@ -1,0 +1,38 @@
+{
+	"name": "uwupp-language-extension",
+	"displayName": "UwU++ Syntax Highlighting",
+	"description": "Syntax support for the esoteric language UwU++",
+	"author": "Mårten Åsberg",
+	"version": "1.0.0",
+	"license": "MIT",
+	"repository": {
+		"type": "github",
+		"url": "https://github.com/89netraM/uwupp-language-extension.git"
+	},
+	"bugs": {
+		"url": "https://github.com/89netraM/uwupp-language-extension/issues"
+	},
+	"engines": {
+		"vscode": "^1.46.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "uwupp",
+				"aliases": [ "UwU++", "uwu++", "UwUpp", "uwupp" ],
+				"extensions": [ ".uwu", ".uwupp" ],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "uwupp",
+				"scopeName": "text.uwupp",
+				"path": "./syntaxes/uwupp.tmLanguage.json"
+			}
+		]
+	}
+}

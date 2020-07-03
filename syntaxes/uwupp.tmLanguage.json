@@ -1,0 +1,188 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "UwUpp",
+	"scopeName": "text.uwupp",
+	"fileTypes": [ "uwu", "uwupp" ],
+	"patterns": [
+		{
+			"begin": "UwU",
+			"end": "\n",
+			"name": "comment.line.uwupp"
+		},
+		{
+			"begin": "( ͡° ͜ʖ ͡°)",
+			"end": "( ͡° ͜ʖ ͡°)",
+			"name": "comment.block.uwupp"
+		},
+		{
+			"begin": "(nuzzels) ",
+			"end": "\n",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.other.print.uwupp"
+				}
+			},
+			"patterns": [
+				{
+					"begin": "\"",
+					"end": "\"",
+					"name": "string.quoted.double.uwupp"
+				},
+				{
+					"include": "#expression"
+				}
+			]
+		},
+		{
+			"begin": "(nyaa) \\*",
+			"end": "\\*",
+			"name": "meta.function.uwupp",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.function.uwupp"
+				}
+			},
+			"patterns": [
+				{
+					"begin": "(\\w+)\\(",
+					"end": "\\)",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.function.uwupp"
+						}
+					},
+					"patterns": [
+						{
+							"match": "\\w+",
+							"name": "variable.parameter.uwupp"
+						}
+					]
+				}
+			]
+		},
+		{
+			"begin": "(OwO )?\\*(notices)",
+			"end": "\\*",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.loop.uwupp"
+				},
+				"2": {
+					"name": "keyword.control.conditional.uwupp"
+				}
+			},
+			"patterns": [
+				{
+					"match": "gweatew twan|wess twan|eqwall twoo",
+					"name": "keyword.control.comparison.uwupp"
+				},
+				{
+					"include": "#term"
+				}
+			]
+		},
+		{
+			"begin": "(wetuwn) ",
+			"end": "\\n",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.uwupp"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#expression"
+				}
+			]
+		},
+		{
+			"match": "stawp",
+			"name": "keyword.control.flow.uwupp"
+		},
+		{
+			"patterns": [
+				{
+					"match": "iws",
+					"name": "keyword.operator.assignment.uwupp"
+				},
+				{
+					"begin": "(awway)<",
+					"end": ">",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.operator.new.uwupp"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#expression"
+						}
+					]
+				},
+				{
+					"include": "#expression"
+				}
+			]
+		}
+	],
+	"repository": {
+		"expression": {
+			"patterns": [
+				{
+					"match": "pwus|minwus|diwide|twimes",
+					"name": "keyword.operator.arithmetic.uwupp"
+				},
+				{
+					"include": "#term"
+				}
+			]
+		},
+		"term": {
+			"patterns": [
+				{
+					"match": "\\d",
+					"name": "constant.numeric.uwupp"
+				},
+				{
+					"begin": "(\\w+)\\(",
+					"end": "\\)",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.other.uwupp"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#expression"
+						}
+					]
+				},
+				{
+					"include": "#variable"
+				}
+			]
+		},
+		"variable": {
+			"patterns": [
+				{
+					"begin": "(\\w+)\\[",
+					"end": "\\]",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.other.uwupp"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#expression"
+						}
+					]
+				},
+				{
+					"match": "\\w+",
+					"name": "variable.other.uwupp"
+				}
+			]
+		}
+	}
+}
